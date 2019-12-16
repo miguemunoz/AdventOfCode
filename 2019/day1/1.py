@@ -1,3 +1,4 @@
+
 fuel = 0x0
 
 with open('input.txt') as f:
