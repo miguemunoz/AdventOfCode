@@ -3,7 +3,7 @@ with open('input.txt') as f:
     for line in f:
         # LOAD ""
         code = [int(instructions) for instructions in line.split(',')]
-        pc = 0
+        pc = 0x0
         # 1202 program alarm state
         code[1] = 12
         code[2] = 2
@@ -18,4 +18,4 @@ with open('input.txt') as f:
                 code[dst] = op1 * op2
             pc += 4
         # HALT
-        print(dict(enumerate(code)))
+        print(dict(enumerate(code))[0])

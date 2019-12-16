@@ -1,10 +1,6 @@
 
-res = 0x0
-noun = 0x0
-verb = 0x0
-
 def execute(code):
-    pc = 0
+    pc = 0x0
     while code[pc] != 99:
         op1 = code[code[pc+1]]
         op2 = code[code[pc+2]]
