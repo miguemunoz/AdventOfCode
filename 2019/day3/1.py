@@ -28,3 +28,4 @@ with open('input.txt') as f:
         distances.append(abs(point[0])+abs(point[1]))
     
     print(min(distances))
+

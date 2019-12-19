@@ -9,3 +9,4 @@ with open('input.txt') as f:
             total += fuel
             fuel = (fuel//3)-2
     print(total)
+

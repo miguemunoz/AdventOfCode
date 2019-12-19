@@ -20,3 +20,4 @@ with open('input.txt') as f:
     
     # Symmetric difference
     print(len(set(path(orbits, 'YOU')) ^ set(path(orbits, 'SAN'))))
+

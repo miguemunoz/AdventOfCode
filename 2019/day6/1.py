@@ -19,3 +19,4 @@ with open('input.txt') as f:
     
     # The number is...
     print(paths)
+

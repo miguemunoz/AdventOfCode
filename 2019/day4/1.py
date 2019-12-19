@@ -31,3 +31,4 @@ def password_gen(l):
 r = list(range(240298,784956+1))
 
 print(len(list(password_gen(r))))
+

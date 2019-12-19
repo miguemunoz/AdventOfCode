@@ -28,3 +28,4 @@ with open('input.txt') as f:
                 if res == 19690720:
                     print(noun,verb)
                     break
+

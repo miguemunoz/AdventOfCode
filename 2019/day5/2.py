@@ -61,25 +61,19 @@ def execute(code):
         elif (opcode == 0x7):  # LESS-THAN
             op1 = operand(code, pc+1, mode[0])
             op2 = operand(code, pc+2, mode[1])
-            #dst = operand(code, pc+3, mode[2])
             if (op1 < op2):
                 code[code[pc+3]] = 1
             else:
                 code[code[pc+3]] = 0
-            #pc = increment_pc(pc, dst)
             pc += 4
         elif (opcode == 0x8):  # EQUAL
             op1 = operand(code, pc+1, mode[0])
             op2 = operand(code, pc+2, mode[1])
-            #dst = operand(code, pc+3, mode[2])
             if (op1 == op2):
                 code[code[pc+3]] = 1
             else:
                 code[code[pc+3]] = 0
             pc += 4
-            #pc = increment_pc(pc, dst)
-
-
     # HALT
     return code
 
@@ -87,3 +81,4 @@ with open('input.txt') as f:
     for line in f:
         refcode = [int(instructions) for instructions in line.split(',')]
         code = execute(refcode)
+

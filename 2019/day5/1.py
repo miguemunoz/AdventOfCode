@@ -39,7 +39,6 @@ def execute(code):
         elif (opcode == 0x3):  # INPUT
             dst = code[pc+1]
             code[dst] = int(input())
-            #print(code[225])
             pc += 2
         elif (opcode == 0x4):  # OUTPUT
             src = operand(code, pc+1, mode[0])
@@ -52,3 +51,4 @@ with open('input.txt') as f:
     for line in f:
         refcode = [int(instructions) for instructions in line.split(',')]
         code = execute(refcode)
+

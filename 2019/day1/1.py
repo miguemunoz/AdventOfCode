@@ -6,3 +6,4 @@ with open('input.txt') as f:
         mass = int(line)
         fuel += (mass//3)-2
     print(fuel)
+

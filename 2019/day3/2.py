@@ -33,3 +33,4 @@ with open('input.txt') as f:
             s[intersection] += numsteps(wire, intersection)
     
     print(min(s.values()))
+

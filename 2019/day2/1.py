@@ -19,3 +19,4 @@ with open('input.txt') as f:
             pc += 4
         # HALT
         print(dict(enumerate(code))[0])
+
