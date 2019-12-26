@@ -96,3 +96,4 @@ with open('input.txt') as f:
                 execute(code, inputs, out)
             values.append(out)
         print(max(values))
+

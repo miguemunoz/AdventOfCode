@@ -1,6 +1,6 @@
 from itertools import permutations
 
-class IntCode:
+class Intcode:
 
     pc = 0x0
 
@@ -26,7 +26,6 @@ class IntCode:
             return code[code[pc]]
 
     def execute(self, code, inputs):
-        #print (f'pc {self.pc}')
         while code[self.pc] != 99:
             # instruction decoding
             opcode, mode = self.decode(code[self.pc])
@@ -93,10 +92,8 @@ with open('input.txt') as f:
         test_cases = list(permutations(amp_phases))
         values = []
         for test in test_cases:
-            #code = [refcode.copy(),refcode.copy(),refcode.copy(),refcode.copy(),refcode.copy()]
-            code = [c.copy() for c in [refcode] * len(amp_phases)] 
-            # amplifiers = [IntCode(),IntCode(),IntCode(),IntCode(),IntCode()]
-            amplifiers = [IntCode() for i in amp_phases]
+            code = [c.copy() for c in [refcode] * len(amp_phases)]
+            amplifiers = [Intcode() for i in amp_phases]
             boot = True
             output = 0x0
             while True:
@@ -107,7 +104,5 @@ with open('input.txt') as f:
                 if output:
                     values.append(output)
                 else:
-                    #print(values)
                     break
-        #print(values)
         print(max(values))
