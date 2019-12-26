@@ -23,3 +23,4 @@ with open('input.txt') as f:
         # saving image
         plt.imshow(img)
         plt.savefig(f'output{p}.png')
+

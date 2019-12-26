@@ -13,3 +13,4 @@ with open('input.txt') as f:
                 m = layer.count('0')
                 r = layer.count('1') * layer.count('2')
         print(r)
+
