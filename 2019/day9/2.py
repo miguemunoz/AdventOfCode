@@ -1,5 +1,5 @@
 
-class IntCode:
+class Intcode:
 
     pc = 0x0
 
@@ -89,14 +89,9 @@ class IntCode:
         return
 
 with open('input.txt') as f:
-
     for line in f:
-        computer = IntCode()
+        computer = Intcode()
         refcode = [int(instructions) for instructions in line.split(',')]
-        #refcode.setdefault(key, [])
-        #print(refcode)
         refcode += [0]*30000
-        #print(refcode)
         code = computer.execute(refcode)
 
-        #print(refcode)
