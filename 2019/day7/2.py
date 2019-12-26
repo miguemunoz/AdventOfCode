@@ -106,3 +106,4 @@ with open('input.txt') as f:
                 else:
                     break
         print(max(values))
+
