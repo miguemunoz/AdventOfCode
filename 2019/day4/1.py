@@ -10,7 +10,6 @@ def valid(candidate):
     # Two adjacent digits are the same...
     adjacent = False
     for idx in range(0,len(s)-1):
-        #print(s[idx], s[idx])
         if s[idx] == s[idx+1]:
             adjacent = True
     if not adjacent:
