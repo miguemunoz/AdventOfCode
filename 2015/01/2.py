@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+""" AoC2015, 1st day, 2nd star """
 
 floor = 0
 
