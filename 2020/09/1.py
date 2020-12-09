@@ -16,18 +16,11 @@ with open('input.txt') as f:
     
     permutations = list(itertools.permutations(preamble, 2))
     
-    candidates = numbers[25:]
-    
-    for i in candidates:
+    for i in numbers[25:]:
         
-        found = False
+        value = [x for x in permutations if x[0] != x[1] and i == x[0] + x[1]]
         
-        for p in permutations:
-            if p[0] != p[1] and i == p[0] + p[1]:
-                found = True
-                break
-        
-        if not found:
+        if not value:
             number = i
             break
         
