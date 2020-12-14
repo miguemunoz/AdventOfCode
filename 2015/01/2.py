@@ -3,7 +3,7 @@
 """
     AoC2015, 1st day, 2nd star.
     
-    https://adventofcode.com/2015/day/2
+    https://adventofcode.com/2015/day/1
 """
 
 floor = 0
