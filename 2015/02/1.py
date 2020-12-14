@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+"""
+    AoC2015, 2nd day, 1st star.
+    
+    https://adventofcode.com/2015/day/2
+"""
 
 paper = 0
 

@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+"""
+    AoC2015, 2nd day, 2nd star.
+    
+    https://adventofcode.com/2015/day/2
+"""
 
 ribbon = 0
 
