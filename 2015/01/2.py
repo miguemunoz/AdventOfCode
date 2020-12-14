@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-""" AoC2015, 1st day, 2nd star """
+"""
+    AoC2015, 1st day, 2nd star.
+    
+    https://adventofcode.com/2015/day/2
+"""
 
 floor = 0
 
