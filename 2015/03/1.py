@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+"""
+    AoC2015, 3rd day, 1st star.
+    
+    https://adventofcode.com/2015/day/3
+"""
 
 coordinates = {(0,0)}
 
