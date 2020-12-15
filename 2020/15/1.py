@@ -6,14 +6,17 @@
     https://adventofcode.com/2015/day/15
 """
 
+numbers = {}
+
 with open('input.txt') as f:
     for line in f:
-        numbers = [int(x) for x in line.split(',')]
-        for cnt in range(2020-len(numbers)):
-            last = numbers[-1]
-            if last in numbers[:-1]:
-                idx = numbers[:-1][::-1].index(last)
-                numbers.append(len(numbers)-(len(numbers)-idx-1))
+        for i, n in enumerate([int(x) for x in line.split(',')]):
+            numbers[n],last = i,n
+        for cnt in range(len(numbers),2020):
+            if last in numbers:
+                value = cnt-1-numbers[last]
             else:
-                numbers.append(0)
-        print(numbers[-1])
+                value = 0
+            numbers[last] = cnt-1
+            last = value
+        print(last)

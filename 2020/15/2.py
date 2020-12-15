@@ -6,22 +6,17 @@
     https://adventofcode.com/2015/day/15
 """
 
-numbers = []
-
-d = {}
+numbers = {}
 
 with open('input.txt') as f:
     for line in f:
         for i, n in enumerate([int(x) for x in line.split(',')]):
-            d[n] = i
-            numbers.append(n)
-        last = numbers[-1]
+            numbers[n],last = i,n
         for cnt in range(len(numbers),30000000):
-            if last in d:
-                value = cnt - 1 - d[last]
+            if last in numbers:
+                value = cnt-1-numbers[last]
             else:
                 value = 0
-            d[last] = cnt - 1
+            numbers[last] = cnt-1
             last = value
-            
         print(last)
