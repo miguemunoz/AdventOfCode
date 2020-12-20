@@ -5,9 +5,10 @@
 """
 
 def aoc2020d1(filename, first_star):
-    with open(filename) as f:
-        expenses = [int(expense) for expense in f]
-        if first_star:
+    
+    expenses = [int(expense) for expense in open(filename)]
+    
+    if first_star:
             return [x*y for x in expenses for y in expenses if x+y == 2020][0]
         else:
             return [x*y*z for x in expenses for y in expenses for z in expenses if x+y+z == 2020][0]
