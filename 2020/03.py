@@ -60,8 +60,3 @@ if __name__ == "__main__":
     print(f'aoc2020d3s1: {aoc2020d3s1("input.txt")}')
     print(f'aoc2020d3s2: {aoc2020d3s2("input.txt")}')
 
-
-
-
-
-

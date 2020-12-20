@@ -35,3 +35,4 @@ def aoc2020d2s2(filename):
 if __name__ == "__main__":
     print(f'aoc2020d2s1: {aoc2020d2s1("input.txt")}')
     print(f'aoc2020d2s2: {aoc2020d2s2("input.txt")}')
+
