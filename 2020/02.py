@@ -6,7 +6,7 @@
 
 def aoc2020d2(filename, first_star):
     
-    cnt = 0x0
+    cnt = 0
     
     for line in open(filename):
         
