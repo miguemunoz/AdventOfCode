@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 """
-    AoC2020, 1st day.
-    
-    https://adventofcode.com/2020/day/1
+    AoC2020, 1st day ( https://adventofcode.com/2020/day/1 )
 """
 
 def aoc2020d1s1(filename):
