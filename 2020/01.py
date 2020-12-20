@@ -3,7 +3,7 @@
 """
     AoC2020, 1st day.
     
-    https://adventofcode.com/2015/day/1
+    https://adventofcode.com/2020/day/1
 """
 
 def aoc2020d1s1(filename):
