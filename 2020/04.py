@@ -15,50 +15,27 @@ passport_fields = {'byr': False,
                    'pid': False,
                    'cid': True}
 
-def validate_entry(field, value):
-    
-    if field == 'byr':
-        if int(value) >= 1920 and int(value) <= 2002 and len(value.strip()) == 4:
-            return True
-    elif field == 'iyr':
-        if int(value) >= 2010 and int(value) <= 2020 and len(value.strip()) == 4:
-            return True
-    elif field == 'eyr':
-        if int(value) >= 2010 and int(value) <= 2030 and len(value.strip()) == 4:
-            return True
-    elif field == 'hgt':
-        unit = value[-2:]
-        if unit == 'cm':
-            h = int(value[:-2])
-            if h >= 150 and h <= 193:
-                return True
-        elif unit == 'in':
-            h = int(value[:-2])
-            if h >= 59 and h <= 76:
-                return True
-    elif field == 'hcl':
-        if value[0] == '#' and len(value[1:]) == 6:
-            return True
-    elif field == 'ecl':
-        if value in ['amb','blu','brn','gry','grn', 'hzl','oth']:
-            return True
-    elif field == 'pid':
-        if len(value.strip()) == 9:
-            return True
-    elif field == 'cid':
-            return True
-    
-    return False
+validate_passport_entry = {
+    "byr": (lambda x: int(x) >= 1920 and int(x) <= 2002 and len(x.strip()) == 4),
+    "iyr": (lambda x: int(x) >= 2010 and int(x) <= 2020 and len(x.strip()) == 4),
+    "eyr": (lambda x: int(x) >= 2010 and int(x) <= 2030 and len(x.strip()) == 4),
+    "hgt": (lambda x: (x[-2:] == 'cm' and int(x[:-2]) >= 150 and int(x[:-2]) <= 193) or \
+                      (x[-2:] == 'in' and int(x[:-2]) >=  59 and int(x[:-2]) <=  76)),
+    "hcl": (lambda x: x[0] == '#' and len(x[1:]) == 6),
+    "ecl": (lambda x: x in ['amb','blu','brn','gry','grn', 'hzl','oth']),
+    "pid": (lambda x: len(x.strip()) == 9),
+    "cid": (lambda x: True)
+}
 
 def aoc2020d4(filename, first_star=True):
-
-    total = 0
     
     with open(filename) as f:
         
+        total = 0
+        
         passports =  [x for x in f]
         
-        validation = fields.copy()
+        validation = passport_fields.copy()
         
         for line in passports:
             if line != '\n':
@@ -68,12 +45,12 @@ def aoc2020d4(filename, first_star=True):
                     if first_star:
                         validation[field] = True
                     else:
-                        validation[field] = validate_entry(field, value)
+                        validation[field] = validate_passport_entry[field](value)
             else:
                 if reduce((lambda x, y: x == y == True), validation.values()):
                     total += 1
                 
-                validation = fields.copy()
+                validation = passport_fields.copy()
         
         if reduce((lambda x, y: x == y == True), validation.values()):
             total += 1
