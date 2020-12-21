@@ -1,9 +1,14 @@
+#!/usr/bin/env python3
 
-ids = []
+"""
+    AoC2020, 5th day ( https://adventofcode.com/2020/day/5 )
+"""
 
-with open('input.txt') as f:
+def aoc2020d5(filename, first_star=True):
     
-    locations =  [x for x in f.readlines()]
+    ids = []
+    
+    locations =  [x for x in open(filename)]
     
     for seat in locations:
         row = seat[:7]
@@ -28,7 +33,13 @@ with open('input.txt') as f:
     
     ids = sorted(ids)
     
-    for idx in range(len(ids)-1):
-        if ids[idx] == ids[idx+1]-2:
-            print(ids[idx]+1)
+    if not first_star:
+        for idx in range(len(ids)-1):
+            if ids[idx] == ids[idx+1]-2:
+                return ids[idx]+1
     
+    return max(ids)
+
+if __name__ == "__main__":
+    print(f'aoc2020d5s1: {aoc2020d5("input.txt", True)}')
+    print(f'aoc2020d5s2: {aoc2020d5("input.txt", False)}')
