@@ -8,12 +8,12 @@ from collections import Counter
 
 def rotate(word, shift):
     
-    ret = []
+    decrypted = []
     
     for c in word:
-        ret.append(chr(((ord(c) - ord('a') + int(shift)) % 26) + ord('a')))
+        decrypted.append(chr(((ord(c) - ord('a') + int(shift)) % 26) + ord('a')))
     
-    return ''.join([x for x in ret])
+    return ''.join(decrypted)
 
 def shift_decypher(words, shift):
     
@@ -23,7 +23,7 @@ def shift_decypher(words, shift):
         word = rotate(word, shift)
         message.append(word)
     
-    return ' '.join([word for word in message])
+    return ' '.join(message)
 
 def calculate_checksum(letters):
 
